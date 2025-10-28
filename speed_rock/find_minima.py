@@ -4,7 +4,7 @@ import time
 import tracemalloc
 from speed_rock import load_h5_data
 
-def find_minima(benchmark=False):
+def find_minima(rcdata: np.ndarray, benchmark: bool = True) -> np.ndarray:
     """
     Identify local minima in the rocking curve data.
 
@@ -16,13 +16,13 @@ def find_minima(benchmark=False):
     Returns
     -------
     np.ndarray
-        Mask array marking detected minima.
+        Array labelling the rocking curve.
     """
     if benchmark:
         start_time = time.perf_counter()
         tracemalloc.start()
 
-    rcdata = load_h5_data()
+    
 
     center = rcdata[:, 1:-1]
     mask = center < rcdata[:, :-2]

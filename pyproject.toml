@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["speed_rock/**", "README.md", "LICENSE"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["speed_rock"]
+
+[tool.hatch.build.targets.sdist]
+include = ["speed_rock/**", "README.md", "LICENSE"]
+
+[project]
+name = "speed_rock"
+version = "0.0.0"
+description = "template python library"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [
+  { name = "Aditya Shukla", email = "adityashukla.chess@gmail.com" }
+]
+dependencies = [
+  "numpy",
+  "h5py"
+]
